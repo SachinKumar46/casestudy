@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet" />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/plugin.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <style>
+        .custom-nav .nav-list li a.active {
+            border-bottom: 2px solid #000000;
+        }
+    </style>
+    <header class="nav-bg-b main-header navfix fixed-top menu-white">
+        <div class="container m-pad">
+            <div class="menu-header">
+                <div class="dsk-logo">
+                    <a href="#" class="nav-brand "> <img src="images/logo.png" alt="Logo" class="mega-white-logo" />
+                        <img src="images/logo.png" alt="Logo" class="mega-darks-logo" /> </a>
+                </div>
+                <div class="custom-nav" role="navigation">
+                    <ul class="nav-list">
+                        <li class="#"> <a href="{{ route('home') }}"
+                                class="menu-links @if(Route::is('home')) active @endif">Home</a> </li>
+                        <li class="sbmenu" onMouseEnter={showfun}>
+                            <a href="{{ route('aboutUs') }}"
+                                class="menu-links
+                            @if(Route::is('aboutUs') || Route::is('whyUs') || Route::is('developmentProcess') || Route::is('contactUs') || Route::is('career')) active @endif ">Company</a>
+                            <div class="nx-dropdown" id="dropdown-box">
+                                <div class="sub-menu-section">
+                                    <div class="container">
+                                        <div class="sub-menu-center-block">
+                                            <!--<div class="sub-menu-column">
+                                                <ul>
+                                                    {{-- <li onclick="hidefun()"> <a href="{{ route('aboutUs') }}">About Us</a> </li>
+                                                    <li onclick="hidefun()"> <a href="{{ route('whyUs') }}">Why Us</a> </li>  --}}
+                                                </ul>
+                                            </div>-->
+                                            <div class="sub-menu-column">
+                                                <ul>
+                                                    <li onclick="hidefun()">
+                                                        <a href="{{ route('aboutUs') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="far fa-address-card"></i>
+                                                            </div>
+                                                            About Us
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun()">
+                                                        <a href="{{ route('whyUs') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fas fa-question"></i>
+                                                            </div>
+                                                            Why Us
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun()">
+                                                        <a href="{{ route('developmentProcess') }}">
+                                                            <div class="header-image-box"> <i
+                                                                    class="far fa-file-code"></i> </div> Development
+                                                            Process
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun()">
+                                                        <a href="{{ route('contactUs') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="far fa-address-book"></i>
+                                                            </div>
+                                                            Contact Us
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun()">
+                                                        <a href="{{ route('career') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="far fa-file-alt"></i>
+                                                            </div>
+                                                            Careers
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="sub-menu-column">
+                                                <button type="button" class="btn btn-primary download-profile"
+                                                    data-toggle="modal" data-target="#myModal" onclick="setFormType()">
+                                                    <img src="images/banner/header-1.jpg" alt="service"
+                                                        class="img-fluid" /> </button>
+                                            </div>
+                                            <div class="sub-menu-column last">
+                                                <a> <img src="images/banner/header-2.jpg" alt="service"
+                                                        class="img-fluid" /> </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="sbmenu" onmouseover="showfun2()">
+                            <a href="{{ route('websiteDevelopment') }}"
+                                class="menu-links
+                            @if(Route::is('websiteDevelopment') || Route::is('mobileAppDevelopment') || Route::is('ecommerceDevelopment') || Route::is('digitalMarketing')
+                            || Route::is('customSoftwareDevelopment') || Route::is('androidDevelopmentCompany') || Route::is('iosAppDevelopmentCompany') || Route::is('softwareDevelopmentCompanyPune')
+                            || Route::is('iotServices') || Route::is('design') || Route::is('testing') || Route::is('itSoftwareConsulting')
+                            || Route::is('digitalTransformation') || Route::is('androidAppDevelopmentCompanyPune') || Route::is('iosAppDevelopmentCompanyPune') || Route::is('softwareDevelopmentCompanyBangalore')
+                            || Route::is('dedicatedTeams') || Route::is('machineLearning') || Route::is('blockchainDevelopment') || Route::is('graphicsDesign')
+                            || Route::is('maintainance') || Route::is('androidAppDevelopmentCompanyMumbai') || Route::is('iosAppDevelopmentCompanyMumbai') || Route::is('softwareDevelopmentCompanyMumbai')) active @endif">
+                                Services
+                            </a>
+                            <div class="nx-dropdown" id="dropdown-box2">
+                                <div class="sub-menu-section">
+                                    <div class="container">
+                                        <div class="sub-menu-center-block service-dropdown">
+                                            <div class="sub-menu-column">
+                                                <ul>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('websiteDevelopment') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fas fa-desktop"></i>
+                                                            </div>
+                                                            Website Development
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('mobileAppDevelopment') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fas fa-mobile-alt"></i>
+                                                            </div>
+                                                            Mobile App Development
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('ecommerceDevelopment') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fas fa-shopping-cart"></i>
+                                                            </div>
+                                                            e-Commerce Development
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('digitalMarketing') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fab fa-youtube"></i>
+                                                            </div>
+                                                            Digital Marketing
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('customSoftwareDevelopment') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="far fa-chart-bar"></i>
+                                                            </div>
+                                                            Custom Software Development
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('androidDevelopmentCompany') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fab fa-android"></i>
+                                                            </div>
+                                                            Android Development Company
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('iosAppDevelopmentCompany') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fab fa-apple"></i>
+                                                            </div>
+                                                            Ios App Development Company
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('softwareDevelopmentCompanyPune') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fas fa-laptop-code"></i>
+                                                            </div>
+                                                            Software Development Company Pune
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="sub-menu-column IT">
+                                                <ul>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('iotServices') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fab fa-internet-explorer"></i>
+                                                            </div>
+                                                            Internet Of Things
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('design') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fas fa-palette"></i>
+                                                            </div>
+                                                            UI/UX Design
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('testing') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fas fa-laptop-code"></i>
+                                                            </div>
+                                                            Software Testing &amp; QA
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('itSoftwareConsulting') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fas fa-chart-line"></i>
+                                                            </div>
+                                                            IT Strategy &amp; Software Consulting
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('digitalTransformation') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fas fa-external-link-alt"></i>
+                                                            </div>
+                                                            Digital Transformation
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('androidAppDevelopmentCompanyPune') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fas fa-mobile-alt"></i>
+                                                            </div>
+                                                            Android App Development Company Pune
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('iosAppDevelopmentCompanyPune') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fab fa-app-store-ios"></i>
+                                                            </div>
+                                                            Ios App Development Company Pune
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('softwareDevelopmentCompanyBangalore') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fas fa-laptop"></i>
+                                                            </div>
+                                                            Software Development Company Banglore
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="sub-menu-column">
+                                                <ul>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('dedicatedTeams') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fas fa-users"></i>
+                                                            </div>
+                                                            Dedicated Teams
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('machineLearning') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fas fa-laptop-code"></i>
+                                                            </div>
+                                                            AI/ML Development Services
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('blockchainDevelopment') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fas fa-link"></i>
+                                                            </div>
+                                                            Blockchain Development
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('graphicsDesign') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fas fa-pen-fancy"></i>
+                                                            </div>
+                                                            Graphics Design
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('maintainance') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fas fa-tools"></i>
+                                                            </div>
+                                                            Maintenance
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('androidAppDevelopmentCompanyMumbai') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fas fa-mobile"></i>
+                                                            </div>
+                                                            Android App Development Company Mumbai
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('iosAppDevelopmentCompanyMumbai') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fas fa-mobile-alt"></i>
+                                                            </div>
+                                                            Ios App Development Company Mumbai
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="hidefun2()">
+                                                        <a href="{{ route('softwareDevelopmentCompanyMumbai') }}">
+                                                            <div class="header-image-box">
+                                                                <i class="fas fa-desktop"></i>
+                                                            </div>
+                                                            Software Development Company Mumbai
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="#">
+                            <a href="{{ route('portfolio') }}"
+                                class="menu-links @if(Route::is('portfolio')) active @endif">Portfolio</a>
+                            <div class="#">
+                                <div class="sub-menu-section">
+                                    <div class="sub-menu-center-block">
+                                        <div class="#">
+                                            <ul></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="#">
+                            <a href="https://brancosoft.com/blog" class="menu-links">Blog</a>
+                            <div class="#">
+                                <div class="sub-menu-section">
+                                    <div class="sub-menu-center-block">
+                                        <div class="#">
+                                            <ul></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li> <a class="menu-links right-bddr">&nbsp;</a>
+                        <li class="contact-show">
+                            <a href="javascript:;" class="btn-round- trngl btn-br bg-btn"> <i
+                                    class="fas fa-phone-alt"></i> </a>
+                            <div class="contact-inquiry">
+                                <div class="contact-info-">
+                                    <div class="contct-heading"> BrancoSoft Contacts </div>
+                                    <div class="inquiry-card-nn"> {{--
+                                        <div class="title-inq-c">FOR HR DEPARTMENT</div> --}}
+                                        <ul>
+                                            <li>
+                                                <a href="tel:+91 935 433 1163">
+                                                    <i class="fas fa-phone-alt"></i>
+                                                    +91 935 433 1163
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="skype:live:brancosoft?call">
+                                                    <i class="fab fa-skype"></i>
+                                                    live:brancosoft
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="mailto:info@brancosoft.com">
+                                                    <i class="fas fa-envelope"></i>
+                                                    info@brancosoft.com
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+
+
+                            <button type="button" class="btn btn-dark btn-br lnk" data-toggle="modal"
+                                data-target="#myModal"> Request A Quote </button>
+
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- {{--Mobile Menu--}} -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="dsk-logo">
+            <a href="#" class="nav-brand"> <img src="images/logo.png" alt="Logo"
+                    class="mega-white-logo" /> </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span
+                onclick="changeicon()" class="navbar-toggler-icon" id="trigger-icon"></span> </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="nav-wrapper nav-wrapper-0" data-level="0" data-index="0">
+                <div class="nav-content">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a href="#" class="nav-link" onclick="removefun()">
+                                Home <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Company
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a href="about-us" class="dropdown-item" onclick="removefun()">
+                                    About Us
+                                </a>
+                                <a href="{{ route('whyUs') }}" class="dropdown-item" onclick="removefun()">
+                                    Why Us
+                                </a>
+                                <a href="{{ route('developmentProcess') }}" class="dropdown-item" onclick="removefun()">
+                                    Development Process
+                                </a>
+                                <a href="{{ route('contactUs') }}" class="dropdown-item" onclick="removefun()">
+                                    Contact Us
+                                </a>
+                                <a href="{{ route('career') }}" class="dropdown-item" onclick="removefun()">
+                                    Careers
+                                </a>
+                                <button type="button" class="btn btn-primary download-profile at-mobile"
+                                    data-toggle="modal" data-target="#myModal" onclick="setFormType()">
+                                    <a href="javascript:;" class="dropdown-item" onclick="removefun()">
+                                        Download Company Profile
+                                    </a>
+                                </button>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Services
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a href="{{ route('websiteDevelopment') }}" class="dropdown-item" onclick="removefun()">
+                                    Website Development
+                                </a>
+                                <a href="{{ route('mobileAppDevelopment') }}" class="dropdown-item"
+                                    onclick="removefun()">
+                                    Mobile App Development
+                                </a>
+                                <a href="{{ route('ecommerceDevelopment') }}" class="dropdown-item"
+                                    onclick="removefun()">
+                                    e-Commerce Development
+                                </a>
+                                <a href="{{ route('digitalMarketing') }}" class="dropdown-item" onclick="removefun()">
+                                    Digital Marketing
+                                </a>
+                                <a href="{{ route('customSoftwareDevelopment') }}" class="dropdown-item"
+                                    onclick="removefun()">
+                                    Custom Software Development
+                                </a>
+                                <a href="{{ route('androidDevelopmentCompany') }}" class="dropdown-item"
+                                    onclick="removefun()">
+                                    Android Development Company
+                                </a>
+                                <a href="{{ route('iosAppDevelopmentCompany') }}" class="dropdown-item"
+                                    onclick="removefun()">
+                                    Ios App Development Company
+                                </a>
+                                <a href="{{ route('softwareDevelopmentCompanyPune') }}" class="dropdown-item"
+                                    onclick="removefun()">
+                                    Software Development Company Pune
+                                </a>
+                                <a href="{{ route('iotServices') }}" class="dropdown-item" onclick="removefun()">
+                                    Internet of Thing
+                                </a>
+                                <a href="{{ route('design') }}" class="dropdown-item" onclick="removefun()">
+                                    UI/UX Design
+                                </a>
+                                <a href="{{ route('testing') }}" class="dropdown-item" onclick="removefun()">
+                                    Software Testing & QA
+                                </a>
+                                <a href="{{ route('itSoftwareConsulting') }}" class="dropdown-item"
+                                    onclick="removefun()">
+                                    It Strategy & Software Consulting
+                                </a>
+                                <a href="{{ route('digitalTransformation') }}" class="dropdown-item"
+                                    onclick="removefun()">
+                                    Digital Transformation
+                                </a>
+                                <a href="{{ route('androidAppDevelopmentCompanyPune') }}" class="dropdown-item"
+                                    onclick="removefun()">
+                                    Android App Development Company Pune
+                                </a>
+                                <a href="{{ route('iosAppDevelopmentCompanyPune') }}" class="dropdown-item"
+                                    onclick="removefun()">
+                                    Ios App Development Company Pune
+                                </a>
+                                <a href="{{ route('softwareDevelopmentCompanyBangalore') }}" class="dropdown-item"
+                                    onclick="removefun()">
+                                    Software Development Company Banglore
+                                </a>
+                                <a href="{{ route('dedicatedTeams') }}" class="dropdown-item" onclick="removefun()">
+                                    Dedicated Teams
+                                </a>
+                                <a href="{{ route('machineLearning') }}" class="dropdown-item" onclick="removefun()">
+                                    AI/ML Development Services
+                                </a>
+                                <a href="{{ route('blockchainDevelopment') }}" class="dropdown-item"
+                                    onclick="removefun()">
+                                    Blockchain Development
+                                </a>
+                                <a href="{{ route('graphicsDesign') }}" class="dropdown-item" onclick="removefun()">
+                                    Graphic Design
+                                </a>
+                                <a href="{{ route('maintainance') }}" class="dropdown-item" onclick="removefun()">
+                                    Maintainance
+                                </a>
+                                <a href="{{ route('androidAppDevelopmentCompanyMumbai') }}" class="dropdown-item"
+                                    onclick="removefun()">
+                                    Android App Development Company Mumbai
+                                </a>
+                                <a href="{{ route('iosAppDevelopmentCompanyMumbai') }}" class="dropdown-item"
+                                    onclick="removefun()">
+                                    Ios App Development Company Mumbai
+                                </a>
+                                <a href="{{ route('softwareDevelopmentCompanyMumbai') }}" class="dropdown-item"
+                                    onclick="removefun()">
+                                    Software Development Company Mumbai
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item"> <a href="{{ route('portfolio') }}" class="nav-link" onclick="removefun()">
+                                Portfolio
+                            </a></li>
+                        <li class="nav-item"> <a href="https://brancosoft.com/blog/" class="nav-link"
+                                onclick="removefun()">
+                                Blog
+                            </a>
+                        </li>
+
+                        <li class="mobile-req" onclick="removefun()">
+                            <!-- <button type="button" class="btn btn-primary btn-br bg-btn3 btshad-b2 lnk" data-toggle="modal" data-target="#myModal"> Request A Quote </button> -->
+                            <button type="button" class=" btn btn-light btn-main2 lnk" data-toggle="modal"
+                                data-target="#myModal"> Request A Quote </button>
+                        </li>
+                    </ul>
+                    <!-- {{-- mobile-menu-bottom-contact --}} -->
+                    <ul role="menu" aria-level="1" class="bottom-nav">
+                        <li class="prb">
+                            <div class="nav-item-wrapper">
+                                <a href="tel:+91 935 433 1163" class="nav-item" tabindex="0" role="menuitem"> <i
+                                        class="fas fa-phone-alt"></i> </a>
+                            </div>
+                        </li>
+                        <li class="prb sky">
+                            <div class="nav-item-wrapper">
+                                <a href="skype:live:brancosoft?call" class="nav-item" tabindex="0" role="menuitem"> <i
+                                        class="fab fa-skype"></i> </a>
+                            </div>
+                        </li>
+                        <li class="prb">
+                            <div class="nav-item-wrapper">
+                                <a href="mailto:info@brancosoft.com" class="nav-item" tabindex="0" role="menuitem"> <i
+                                        class="fas fa-envelope"></i> </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- {{-- mobile-menu-bottom-contact-end --}} -->
+        <ul class="popup-form-box">
+            <li class="contact-show">
+                <a href="javascript:;" class="btn-round- trngl btn-br bg-btn"> <i class="fas fa-phone-alt"></i> </a>
+                <div class="contact-inquiry">
+                    <div class="contact-info-">
+                        <div class="contct-heading">BrancoSoft Contacts</div>
+                        <div class="inquiry-card-nn">
+                            <ul>
+                                <li>
+                                    <a href="tel:+91 935 433 1163">
+                                        <i class="fas fa-phone-alt"></i>
+                                        +91 935 433 1163
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="skype:live:brancosoft?call">
+                                        <i class="fab fa-skype"></i>
+                                        live:brancosoft
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:info@brancosoft.com">
+                                        <i class="fas fa-envelope"></i>
+                                        info@brancosoft.com
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <!-- {{--mobile-menu-end--}} -->
+    <!-- {{-- The Modal --}} -->
+    <div class="modal fade" id="myModal" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content header-popup-color">
+                <div class="modal-header">
+                    <h4 class="modal-title">Request A Quote</h4>
+                    <button type="button" class="closes" data-dismiss="modal">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-block">
+                        <form data-toggle="validator" novalidate="true">
+                            <div class="messages"></div>
+                            <div class="fieldsets row">
+                                <div class="col-md-12 form-group">
+                                    <input type="text" name="nav_name" placeholder="Enter your name *" required=""
+                                        data-error="Name is required." value="">
+                                    <div class="help-block with-errors" id="nav_nameError"></div>
+                                </div>
+                            </div>
+                            <div class="fieldsets row">
+                                <div class="col-md-4 form-group">
+                                    <select name="countryCode" id="countryCode">
+                                        <option data-countryCode="" value="">Select Country</option>
+                                        <!-- {{-- <optgroup label="Other countries"> --}} -->
+                                            <option data-countryCode="DZ" value="213">Algeria (+213)</option>
+                                            <option data-countryCode="AD" value="376">Andorra (+376)</option>
+                                            <option data-countryCode="AO" value="244">Angola (+244)</option>
+                                            <option data-countryCode="AI" value="1264">Anguilla (+1264)</option>
+                                            <option data-countryCode="AG" value="1268">Antigua &amp; Barbuda (+1268)
+                                            </option>
+                                            <option data-countryCode="AR" value="54">Argentina (+54)</option>
+                                            <option data-countryCode="AM" value="374">Armenia (+374)</option>
+                                            <option data-countryCode="AW" value="297">Aruba (+297)</option>
+                                            <option data-countryCode="AU" value="61">Australia (+61)</option>
+                                            <option data-countryCode="AT" value="43">Austria (+43)</option>
+                                            <option data-countryCode="AZ" value="994">Azerbaijan (+994)</option>
+                                            <option data-countryCode="BS" value="1242">Bahamas (+1242)</option>
+                                            <option data-countryCode="BH" value="973">Bahrain (+973)</option>
+                                            <option data-countryCode="BD" value="880">Bangladesh (+880)</option>
+                                            <option data-countryCode="BB" value="1246">Barbados (+1246)</option>
+                                            <option data-countryCode="BY" value="375">Belarus (+375)</option>
+                                            <option data-countryCode="BE" value="32">Belgium (+32)</option>
+                                            <option data-countryCode="BZ" value="501">Belize (+501)</option>
+                                            <option data-countryCode="BJ" value="229">Benin (+229)</option>
+                                            <option data-countryCode="BM" value="1441">Bermuda (+1441)</option>
+                                            <option data-countryCode="BT" value="975">Bhutan (+975)</option>
+                                            <option data-countryCode="BO" value="591">Bolivia (+591)</option>
+                                            <option data-countryCode="BA" value="387">Bosnia Herzegovina (+387)</option>
+                                            <option data-countryCode="BW" value="267">Botswana (+267)</option>
+                                            <option data-countryCode="BR" value="55">Brazil (+55)</option>
+                                            <option data-countryCode="BN" value="673">Brunei (+673)</option>
+                                            <option data-countryCode="BG" value="359">Bulgaria (+359)</option>
+                                            <option data-countryCode="BF" value="226">Burkina Faso (+226)</option>
+                                            <option data-countryCode="BI" value="257">Burundi (+257)</option>
+                                            <option data-countryCode="KH" value="855">Cambodia (+855)</option>
+                                            <option data-countryCode="CM" value="237">Cameroon (+237)</option>
+                                            <option data-countryCode="CA" value="1">Canada (+1)</option>
+                                            <option data-countryCode="CV" value="238">Cape Verde Islands (+238)</option>
+                                            <option data-countryCode="KY" value="1345">Cayman Islands (+1345)</option>
+                                            <option data-countryCode="CF" value="236">Central African Republic (+236)
+                                            </option>
+                                            <option data-countryCode="CL" value="56">Chile (+56)</option>
+                                            <option data-countryCode="CN" value="86">China (+86)</option>
+                                            <option data-countryCode="CO" value="57">Colombia (+57)</option>
+                                            <option data-countryCode="KM" value="269">Comoros (+269)</option>
+                                            <option data-countryCode="CG" value="242">Congo (+242)</option>
+                                            <option data-countryCode="CK" value="682">Cook Islands (+682)</option>
+                                            <option data-countryCode="CR" value="506">Costa Rica (+506)</option>
+                                            <option data-countryCode="HR" value="385">Croatia (+385)</option>
+                                            <option data-countryCode="CU" value="53">Cuba (+53)</option>
+                                            <option data-countryCode="CY" value="90392">Cyprus North (+90392)</option>
+                                            <option data-countryCode="CY" value="357">Cyprus South (+357)</option>
+                                            <option data-countryCode="CZ" value="42">Czech Republic (+42)</option>
+                                            <option data-countryCode="DK" value="45">Denmark (+45)</option>
+                                            <option data-countryCode="DJ" value="253">Djibouti (+253)</option>
+                                            <option data-countryCode="DM" value="1809">Dominica (+1809)</option>
+                                            <option data-countryCode="DO" value="1809">Dominican Republic (+1809)
+                                            </option>
+                                            <option data-countryCode="EC" value="593">Ecuador (+593)</option>
+                                            <option data-countryCode="EG" value="20">Egypt (+20)</option>
+                                            <option data-countryCode="SV" value="503">El Salvador (+503)</option>
+                                            <option data-countryCode="GQ" value="240">Equatorial Guinea (+240)</option>
+                                            <option data-countryCode="ER" value="291">Eritrea (+291)</option>
+                                            <option data-countryCode="EE" value="372">Estonia (+372)</option>
+                                            <option data-countryCode="ET" value="251">Ethiopia (+251)</option>
+                                            <option data-countryCode="FK" value="500">Falkland Islands (+500)</option>
+                                            <option data-countryCode="FO" value="298">Faroe Islands (+298)</option>
+                                            <option data-countryCode="FJ" value="679">Fiji (+679)</option>
+                                            <option data-countryCode="FI" value="358">Finland (+358)</option>
+                                            <option data-countryCode="FR" value="33">France (+33)</option>
+                                            <option data-countryCode="GF" value="594">French Guiana (+594)</option>
+                                            <option data-countryCode="PF" value="689">French Polynesia (+689)</option>
+                                            <option data-countryCode="GA" value="241">Gabon (+241)</option>
+                                            <option data-countryCode="GM" value="220">Gambia (+220)</option>
+                                            <option data-countryCode="GE" value="7880">Georgia (+7880)</option>
+                                            <option data-countryCode="DE" value="49">Germany (+49)</option>
+                                            <option data-countryCode="GH" value="233">Ghana (+233)</option>
+                                            <option data-countryCode="GI" value="350">Gibraltar (+350)</option>
+                                            <option data-countryCode="GR" value="30">Greece (+30)</option>
+                                            <option data-countryCode="GL" value="299">Greenland (+299)</option>
+                                            <option data-countryCode="GD" value="1473">Grenada (+1473)</option>
+                                            <option data-countryCode="GP" value="590">Guadeloupe (+590)</option>
+                                            <option data-countryCode="GU" value="671">Guam (+671)</option>
+                                            <option data-countryCode="GT" value="502">Guatemala (+502)</option>
+                                            <option data-countryCode="GN" value="224">Guinea (+224)</option>
+                                            <option data-countryCode="GW" value="245">Guinea - Bissau (+245)</option>
+                                            <option data-countryCode="GY" value="592">Guyana (+592)</option>
+                                            <option data-countryCode="HT" value="509">Haiti (+509)</option>
+                                            <option data-countryCode="HN" value="504">Honduras (+504)</option>
+                                            <option data-countryCode="HK" value="852">Hong Kong (+852)</option>
+                                            <option data-countryCode="HU" value="36">Hungary (+36)</option>
+                                            <option data-countryCode="IS" value="354">Iceland (+354)</option>
+                                            <option data-countryCode="IN" value="91">India (+91)</option>
+                                            <option data-countryCode="ID" value="62">Indonesia (+62)</option>
+                                            <option data-countryCode="IR" value="98">Iran (+98)</option>
+                                            <option data-countryCode="IQ" value="964">Iraq (+964)</option>
+                                            <option data-countryCode="IE" value="353">Ireland (+353)</option>
+                                            <option data-countryCode="IL" value="972">Israel (+972)</option>
+                                            <option data-countryCode="IT" value="39">Italy (+39)</option>
+                                            <option data-countryCode="JM" value="1876">Jamaica (+1876)</option>
+                                            <option data-countryCode="JP" value="81">Japan (+81)</option>
+                                            <option data-countryCode="JO" value="962">Jordan (+962)</option>
+                                            <option data-countryCode="KZ" value="7">Kazakhstan (+7)</option>
+                                            <option data-countryCode="KE" value="254">Kenya (+254)</option>
+                                            <option data-countryCode="KI" value="686">Kiribati (+686)</option>
+                                            <option data-countryCode="KP" value="850">Korea North (+850)</option>
+                                            <option data-countryCode="KR" value="82">Korea South (+82)</option>
+                                            <option data-countryCode="KW" value="965">Kuwait (+965)</option>
+                                            <option data-countryCode="KG" value="996">Kyrgyzstan (+996)</option>
+                                            <option data-countryCode="LA" value="856">Laos (+856)</option>
+                                            <option data-countryCode="LV" value="371">Latvia (+371)</option>
+                                            <option data-countryCode="LB" value="961">Lebanon (+961)</option>
+                                            <option data-countryCode="LS" value="266">Lesotho (+266)</option>
+                                            <option data-countryCode="LR" value="231">Liberia (+231)</option>
+                                            <option data-countryCode="LY" value="218">Libya (+218)</option>
+                                            <option data-countryCode="LI" value="417">Liechtenstein (+417)</option>
+                                            <option data-countryCode="LT" value="370">Lithuania (+370)</option>
+                                            <option data-countryCode="LU" value="352">Luxembourg (+352)</option>
+                                            <option data-countryCode="MO" value="853">Macao (+853)</option>
+                                            <option data-countryCode="MK" value="389">Macedonia (+389)</option>
+                                            <option data-countryCode="MG" value="261">Madagascar (+261)</option>
+                                            <option data-countryCode="MW" value="265">Malawi (+265)</option>
+                                            <option data-countryCode="MY" value="60">Malaysia (+60)</option>
+                                            <option data-countryCode="MV" value="960">Maldives (+960)</option>
+                                            <option data-countryCode="ML" value="223">Mali (+223)</option>
+                                            <option data-countryCode="MT" value="356">Malta (+356)</option>
+                                            <option data-countryCode="MH" value="692">Marshall Islands (+692)</option>
+                                            <option data-countryCode="MQ" value="596">Martinique (+596)</option>
+                                            <option data-countryCode="MR" value="222">Mauritania (+222)</option>
+                                            <option data-countryCode="YT" value="269">Mayotte (+269)</option>
+                                            <option data-countryCode="MX" value="52">Mexico (+52)</option>
+                                            <option data-countryCode="FM" value="691">Micronesia (+691)</option>
+                                            <option data-countryCode="MD" value="373">Moldova (+373)</option>
+                                            <option data-countryCode="MC" value="377">Monaco (+377)</option>
+                                            <option data-countryCode="MN" value="976">Mongolia (+976)</option>
+                                            <option data-countryCode="MS" value="1664">Montserrat (+1664)</option>
+                                            <option data-countryCode="MA" value="212">Morocco (+212)</option>
+                                            <option data-countryCode="MZ" value="258">Mozambique (+258)</option>
+                                            <option data-countryCode="MN" value="95">Myanmar (+95)</option>
+                                            <option data-countryCode="NA" value="264">Namibia (+264)</option>
+                                            <option data-countryCode="NR" value="674">Nauru (+674)</option>
+                                            <option data-countryCode="NP" value="977">Nepal (+977)</option>
+                                            <option data-countryCode="NL" value="31">Netherlands (+31)</option>
+                                            <option data-countryCode="NC" value="687">New Caledonia (+687)</option>
+                                            <option data-countryCode="NZ" value="64">New Zealand (+64)</option>
+                                            <option data-countryCode="NI" value="505">Nicaragua (+505)</option>
+                                            <option data-countryCode="NE" value="227">Niger (+227)</option>
+                                            <option data-countryCode="NG" value="234">Nigeria (+234)</option>
+                                            <option data-countryCode="NU" value="683">Niue (+683)</option>
+                                            <option data-countryCode="NF" value="672">Norfolk Islands (+672)</option>
+                                            <option data-countryCode="NP" value="670">Northern Marianas (+670)</option>
+                                            <option data-countryCode="NO" value="47">Norway (+47)</option>
+                                            <option data-countryCode="OM" value="968">Oman (+968)</option>
+                                            <option data-countryCode="PW" value="680">Palau (+680)</option>
+                                            <option data-countryCode="PA" value="507">Panama (+507)</option>
+                                            <option data-countryCode="PG" value="675">Papua New Guinea (+675)</option>
+                                            <option data-countryCode="PY" value="595">Paraguay (+595)</option>
+                                            <option data-countryCode="PE" value="51">Peru (+51)</option>
+                                            <option data-countryCode="PH" value="63">Philippines (+63)</option>
+                                            <option data-countryCode="PL" value="48">Poland (+48)</option>
+                                            <option data-countryCode="PT" value="351">Portugal (+351)</option>
+                                            <option data-countryCode="PR" value="1787">Puerto Rico (+1787)</option>
+                                            <option data-countryCode="QA" value="974">Qatar (+974)</option>
+                                            <option data-countryCode="RE" value="262">Reunion (+262)</option>
+                                            <option data-countryCode="RO" value="40">Romania (+40)</option>
+                                            <option data-countryCode="RU" value="7">Russia (+7)</option>
+                                            <option data-countryCode="RW" value="250">Rwanda (+250)</option>
+                                            <option data-countryCode="SM" value="378">San Marino (+378)</option>
+                                            <option data-countryCode="ST" value="239">Sao Tome &amp; Principe (+239)
+                                            </option>
+                                            <option data-countryCode="SA" value="966">Saudi Arabia (+966)</option>
+                                            <option data-countryCode="SN" value="221">Senegal (+221)</option>
+                                            <option data-countryCode="CS" value="381">Serbia (+381)</option>
+                                            <option data-countryCode="SC" value="248">Seychelles (+248)</option>
+                                            <option data-countryCode="SL" value="232">Sierra Leone (+232)</option>
+                                            <option data-countryCode="SG" value="65">Singapore (+65)</option>
+                                            <option data-countryCode="SK" value="421">Slovak Republic (+421)</option>
+                                            <option data-countryCode="SI" value="386">Slovenia (+386)</option>
+                                            <option data-countryCode="SB" value="677">Solomon Islands (+677)</option>
+                                            <option data-countryCode="SO" value="252">Somalia (+252)</option>
+                                            <option data-countryCode="ZA" value="27">South Africa (+27)</option>
+                                            <option data-countryCode="ES" value="34">Spain (+34)</option>
+                                            <option data-countryCode="LK" value="94">Sri Lanka (+94)</option>
+                                            <option data-countryCode="SH" value="290">St. Helena (+290)</option>
+                                            <option data-countryCode="KN" value="1869">St. Kitts (+1869)</option>
+                                            <option data-countryCode="SC" value="1758">St. Lucia (+1758)</option>
+                                            <option data-countryCode="SD" value="249">Sudan (+249)</option>
+                                            <option data-countryCode="SR" value="597">Suriname (+597)</option>
+                                            <option data-countryCode="SZ" value="268">Swaziland (+268)</option>
+                                            <option data-countryCode="SE" value="46">Sweden (+46)</option>
+                                            <option data-countryCode="CH" value="41">Switzerland (+41)</option>
+                                            <option data-countryCode="SI" value="963">Syria (+963)</option>
+                                            <option data-countryCode="TW" value="886">Taiwan (+886)</option>
+                                            <option data-countryCode="TJ" value="7">Tajikstan (+7)</option>
+                                            <option data-countryCode="TH" value="66">Thailand (+66)</option>
+                                            <option data-countryCode="TG" value="228">Togo (+228)</option>
+                                            <option data-countryCode="TO" value="676">Tonga (+676)</option>
+                                            <option data-countryCode="TT" value="1868">Trinidad &amp; Tobago (+1868)
+                                            </option>
+                                            <option data-countryCode="TN" value="216">Tunisia (+216)</option>
+                                            <option data-countryCode="TR" value="90">Turkey (+90)</option>
+                                            <option data-countryCode="TM" value="7">Turkmenistan (+7)</option>
+                                            <option data-countryCode="TM" value="993">Turkmenistan (+993)</option>
+                                            <option data-countryCode="TC" value="1649">Turks &amp; Caicos Islands
+                                                (+1649)</option>
+                                            <option data-countryCode="TV" value="688">Tuvalu (+688)</option>
+                                            <option data-countryCode="UG" value="256">Uganda (+256)</option>
+                                            <option data-countryCode="GB" value="44">UK (+44)</option>
+                                            <option data-countryCode="UA" value="380">Ukraine (+380)</option>
+                                            <option data-countryCode="AE" value="971">United Arab Emirates (+971)
+                                            </option>
+                                            <option data-countryCode="UY" value="598">Uruguay (+598)</option>
+                                            <option data-countryCode="US" value="1">USA (+1)</option>
+                                            <option data-countryCode="UZ" value="7">Uzbekistan (+7)</option>
+                                            <option data-countryCode="VU" value="678">Vanuatu (+678)</option>
+                                            <option data-countryCode="VA" value="379">Vatican City (+379)</option>
+                                            <option data-countryCode="VE" value="58">Venezuela (+58)</option>
+                                            <option data-countryCode="VN" value="84">Vietnam (+84)</option>
+                                            <option data-countryCode="VG" value="84">Virgin Islands - British (+1284)
+                                            </option>
+                                            <option data-countryCode="VI" value="84">Virgin Islands - US (+1340)
+                                            </option>
+                                            <option data-countryCode="WF" value="681">Wallis &amp; Futuna (+681)
+                                            </option>
+                                            <option data-countryCode="YE" value="969">Yemen (North)(+969)</option>
+                                            <option data-countryCode="YE" value="967">Yemen (South)(+967)</option>
+                                            <option data-countryCode="ZM" value="260">Zambia (+260)</option>
+                                            <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
+                                            <!-- {{-- -->
+                                        <!-- </optgroup> --}} -->
+                                    </select>
+                                    <div class="help-block with-errors" id="nav_countryCodeError"></div>
+                                </div>
+
+                                <div class="col-md-8 form-group">
+                                    <input type="number" name="nav_phone" placeholder="Enter your Phone No *"
+                                        required="" data-error="Phone No is required." value="">
+                                    <div class="help-block with-errors" id="nav_phoneError"></div>
+                                </div>
+                            </div>
+                            <div class="fieldsets row">
+                                <div class="col-md-12 form-group">
+                                    <input type="email" name="nav_email" placeholder="Enter your email *" required=""
+                                        data-error="Valid email is required." value="">
+                                    <div class="help-block with-errors" id="nav_emailError"></div>
+                                </div>
+                            </div>
+                            <div class="fieldsets form-group has-error has-danger">
+                                <textarea name="nav_message" placeholder="Message *" rows="4" required=""
+                                    data-error="Please, leave us a message."></textarea>
+                                <div class="help-block with-errors" id="nav_messageError"></div>
+                            </div>
+                            <div class="fieldsets mt20 pb20">
+                                {!! NoCaptcha::display() !!}
+                                <div class="help-block with-errors mt-3" id="nav_captchaError"></div>
+                                <button type="button" id="nav_formSubmitBtn" class="lnk btn-main bg-btn disabled">Submit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- {{-- Modal-end --}} -->
+
+
+
+    <!-- new code -->
+    <div class="position-relative">
+        <img src="images/bannerstudy.png" alt="" srcset="" class="img-fluid">
+        <div class="position-absolute caseStudyBanner">
+            <p> "An online platform for fresh, high-quality meats and seafood delivered to your doorstep."</p>
+        </div>
+        <div class="container">
+            <div class="position-absolute caseStudyCircle">
+                <div class="shadow-sm bg-white rounded-circle logo">
+                    <div class="position-absolute">
+                        <img src="images/logoos.png" alt="" srcset="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-end align-items-center case-study-socialIcon mt-2">
+                <span class="mx-3">Visit:</span>
+                <a href="#" class="border rounded-circle p-2"><i class="d-flex justify-content-center align-items-center fab fa-brands fa-twitter"></i></a>
+
+                <a href="#" class="border rounded-circle p-2 mx-3"><i class="d-flex justify-content-center align-items-center fab fa-brands fa-facebook-f"></i></a>
+
+                <a href="#" class="border rounded-circle p-2"><i class="d-flex justify-content-center align-items-center fab fa-brands fa-instagram"></i></i></a>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="container my-5">
+            <div class="my-md-5 pt-md-5 about-case-study">
+                <h1 class="mt-5">About</h1>
+                <p>Licious is developed for selling meat and fish food marketplace applications that help the people to
+                    buy their meal. With this application, the workers and pounders can sell their food through their
+                    agents. The app allows you to buy the fresh meat by categories. It also allows them to search the
+                    product by name. The restaurant owners can also view their past orders. The application comes with
+                    several other features to facilitate easy meal buying experience for the people. Some of these
+                    features are multiple modes of payments that include cash and cards, return policy, tracking order
+                    status, select city, product details, checkout, wishlist, and many others.</p>
+
+
+            </div>
+
+            <div class="border">
+                <div class="p-md-5 p-2">
+                    <img src="images/desert.png" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="theChallangesBg">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-7 col-sm-6">
+                        <div class="the-challaange-case-study">
+                            <h1 class="mt-2">THE<span> CHALLENGES</span></h1>
+                            <p class="text-justify mt-5">While developing this application, we came across several challenges. We had to maintain
+                                the prices and quantity of stocks. Not only this, we also had to manage all the
+                                deliveries to the location. Apart from that, we had to manage several other things like
+                                product, account details, online orders, time management and delivery partners.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-6">
+                        <div>
+                            <img src="images/challenges.png" alt="" srcset="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container my-md-5 pt-5">
+            <div class="the-challaange-case-study">
+                <h1 class="mb-5">THE <span>SOLUTION </span></h1>
+            </div>
+            <div class="row my-md-5 py-md-5">
+                <div class="col-12">
+                    <div class="theChallangesBg rounded-circle m-auto" style="height: 900px;">
+                        <div class="position-relative mt-5" style="top: -150px;">
+                            <img src="images/thesolutiongroup.png" alt="" srcset="" class="img-fluid">
+                        </div>
+                        <div class="col-md-7 col-12 m-auto the-challaange-case-study circleInnerText">
+                            <p class="text-justify">We understood all the challenges properly and came
+                                up with the final
+                                solution that can overcome all of it. We used the technology that made it possible to
+                                reflect any change in the price of the product that has already been added in the cart
+                                in
+                                real-time and have a portal for overview to delivery. Our solution is also feature-rich
+                                which provides a rich experience to the owners, Pounders, agents, and many more.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+           <div class="the-challaange-case-study">
+            <h1 class="text-center mb-5">KEY <span>FEATURES</span></h1>
+           </div>
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="d-flex justify-content-center">
+                        <div class="rounded-circle keyFeaturesCircle position-relative">
+                            <div class="innerImgCircle">
+                                <img src="images/keyfetaures1.png" alt="" srcset="" class="img-fluid">
+                            </div>
+                            <div class="position-absolute  rounded-circle shadow-sm">
+                               <div class="in__cir">1</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center">Manage Order</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="d-flex justify-content-center">
+                        <div class="rounded-circle keyFeaturesCircle bg-red">
+                            <div class="innerImgCircle">
+                                <img src="images/keyfetaures2.png" alt="" srcset="" class="img-fluid">
+                            </div>
+                            <div class="position-absolute  rounded-circle shadow-sm bg-in-cir">
+                                <div class="in__cir">2</div>
+                             </div>
+                        </div>
+                    </div>
+                    <p class="text-center">Manage Order</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="d-flex justify-content-center">
+                        <div class="rounded-circle keyFeaturesCircle">
+                            <div class="innerImgCircle">
+                                <img src="images/keyfetaures3.png" alt="" srcset="" class="img-fluid">
+                            </div>
+                            <div class="position-absolute  rounded-circle shadow-sm">
+                                <div class="in__cir">3</div>
+                             </div>
+                        </div>
+                    </div>
+                    <p class="text-center">Manage Order</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="d-flex justify-content-center">
+                        <div class="rounded-circle keyFeaturesCircle bg-red">
+                            <div class="innerImgCircle">
+                                <img src="images/keyfetaures4.png" alt="" srcset="" class="img-fluid">
+                            </div>
+                            <div class="position-absolute  rounded-circle shadow-sm bg-in-cir">
+                                <div class="in__cir">4</div>
+                             </div>
+                        </div>
+                    </div>
+                    <p class="text-center">Manage Order</p>
+                </div>
+            </div>
+
+            <div class="row mx-md-5 px-md-5 my-4">
+                <div class="col-md-4 col-6">
+                    <div class="d-flex justify-content-center">
+                        <div class="rounded-circle keyFeaturesCircle bg-red">
+                            <div class="innerImgCircle">
+                                <img src="images/keyfetaures5.png" alt="" srcset="" class="img-fluid">
+                            </div>
+                            <div class="position-absolute  rounded-circle shadow-sm bg-in-cir">
+                                <div class="in__cir">5</div>
+                             </div>
+                        </div>
+                    </div>
+                    <p class="text-center">Manage Order</p>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="d-flex justify-content-center">
+                        <div class="rounded-circle keyFeaturesCircle">
+                            <div class="innerImgCircle">
+                                <img src="images/keyfetaures6.png" alt="" srcset="" class="img-fluid">
+                            </div>
+                            <div class="position-absolute  rounded-circle shadow-sm">
+                                <div class="in__cir">6</div>
+                             </div>
+                        </div>
+                    </div>
+                    <p class="text-center">Manage Order</p>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="d-flex justify-content-center">
+                        <div class="rounded-circle keyFeaturesCircle bg-red">
+                            <div class="innerImgCircle">
+                                <img src="images/keyfetaures3.png" alt="" srcset="" class="img-fluid">
+                            </div>
+                            <div class="position-absolute  rounded-circle shadow-sm bg-in-cir">
+                                <div class="in__cir">7</div>
+                             </div>
+                        </div>
+                    </div>
+                    <p class="text-center">Manage Order</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container my-5 pt-4">
+            <div class="row">
+                <div class=" col-12 ">
+                    <div class="about-case-study text-center">
+                        <h1 class="text-center">Aftermath</h1>
+                    <p class="text-center">This application received many responses from several orders as it made their meat shopping experience rich. It also got positive responses from many pounders and agents.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="ftshap">
+        <nav class="social mobile">
+            <ul>
+                <li><a href="https://api.whatsapp.com/send?phone= +91 935 433 1163&amp;text=Hi%20There!"><i
+                            class="fab fa-whatsapp whats" aria-hidden="true"></i></a></li>
+            </ul>
+        </nav>
+
+        <div class="whatsapp-button desktop d-sm-block d-lg-none">
+            <a href="https://api.whatsapp.com/send?phone= +91 935 433 1163&amp;text=Hi%20There!">Whatsapp</a>
+        </div>
+        <!-- <div class="footer-row1" id="download-profile">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 text-center">
+                        <div class="email-subs ">
+                            <h1>Interested Working with Us?</h1></div>
+                            <button type="button" class="btn btn-dark btn-br lnk" data-toggle="modal" data-target="#myModal">Request A Quote </button>
+                    </div>
+                    <div class="col-lg-5 v-center text-center">
+                    <div class="m-mt30"><img src="images/working-img.png" alt="about" class="img-fluid">
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="footer-svg">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1920 80"></svg>
+        </div>
+        <div class="footer-row2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6">
+                        <h5>Contact Us</h5>
+                        <ul class="footer-address-list ftr-details">
+                            <li><span><i class="fas fa-envelope"></i></span>
+                                <p>Email <span> <a href="mailto:info@brancosoft.com">info@brancosoft.com</a></span></p>
+                            </li>
+                            <li><span><i class="fas fa-phone-alt"></i></span>
+                                <p>Phone <span> <a href="tel: +91 935 433 1163"> +91 935 433 1163</a></span></p>
+                            </li>
+                            <li><span><i class="fas fa-map-marker-alt"></i></span>
+                                <p>Delhi, India <span> G-52, 3rd Floor, Sector-63, Noida (U.P)-201301</span></p>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <h5>Company</h5>
+                        <ul class="footer-address-list link-hover foot">
+                            <li><a class="link underline-trail w-inline-block" href="{{ route('aboutUs') }}">
+                                    <div>About us</div>
+                                </a></li>
+                            <li><a href="{{ route('websiteDevelopment') }}">Services</a></li>
+                            <li><a href="{{ route('portfolio') }}">Portfolio</a></li>
+                            <li><a href="{{ route('developmentProcess') }}">Development Process</a></li>
+                            <li><a href="{{ route('career') }}">Career</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <h5>Service</h5>
+                        <ul class="footer-address-list link-hover foot">
+                            <li><a href="{{ route('websiteDevelopment') }}">Website Development</a></li>
+                            <li><a href="{{ route('mobileAppDevelopment') }}">Mobile App Development</a></li>
+                            <li><a href="{{ route('ecommerceDevelopment') }}">e-Commerce Development</a></li>
+                            <li><a href="{{ route('customSoftwareDevelopment') }}">Customer Software Development</a>
+                            </li>
+                            <li><a href="{{ route('itSoftwareConsulting') }}">IT Strategy &amp; Software Consulting</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-sm-6">
+                        <h5>Support</h5>
+                        <ul class="footer-address-list link-hover foot">
+                            <li><a href="{{ route('contactUs') }}">Contact</a></li>
+                            <li><a href="{{ route('termsCondition') }}">Term &amp; Privacy</a></li>
+                            <li><a href="{{ route('refundPolicy') }}">Refund Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="footer-badge">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-5 pull-left">
+                        <h2 class="text-light">BRANCOSOFT</h2>
+                        <p class="text-light">Creating advanced mobile and web applications infused with data-driven
+                            insights and seamlessly integrated AI functionalities to drive digital innovation. </p>
+                    </div>
+                    <div class="col-md-7 pull-right">
+                        <div class="other-box">
+                            <ul>
+                                <li>
+                                    <img src="images/bw_webby_honoree.png" alt="Logo" class="mega-darks-logo" />
+                                </li>
+                                <li>
+                                    <img src="images/CLUTCH.svg" alt="Logo" class="mega-darks-logo" />
+                                </li>
+                                <li>
+                                    <img src="images/great-place-to-work-techahead-size.png" alt="Logo"
+                                        class="mega-darks-logo" />
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer-badge">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-6 d-md-block d-none">
+                        <a href="//www.dmca.com/Protection/Status.aspx?ID=ec082c48-d4a1-4323-9300-1be43714e1a4"
+                            title="DMCA.com Protection Status" class="dmca-badge">
+                            <img src="images/dmca-badge-w100-2x1-02.png" alt="Logo" class="mega-darks-logo" />
+                        </a>
+                        <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+                    </div>
+                    <div class="col-md-6 d-md-none d-block mb-2">
+                        <div class="social-links d-flex justify-content-md-end justify-content-start">
+                            <span class="">Follow us on</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="social-links">
+                            <span class="d-md-block d-none">Follow us on</span>
+                            <span class="d-md-none d-block followUsOnImgFooter">
+                                <a href="//www.dmca.com/Protection/Status.aspx?ID=ec082c48-d4a1-4323-9300-1be43714e1a4"
+                                    title="DMCA.com Protection Status" class="dmca-badge">
+                                    <img src="images/dmca-badge-w100-2x1-02.png" alt="Logo"
+                                        class="mega-darks-logo" />
+                                </a>
+                                <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+                            </span>
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/TheBrancoSoft/" class="fb"><img
+                                            src="images/icons/fb-2024.svg" alt="Facebook" width="100%" height="100%"
+                                            data-lazy-src="images/icons/fb-2024.svg" data-ll-status="loaded"
+                                            class="entered lazyloaded"><noscript><img src="images/icons/fb-2024.svg"
+                                                alt="Facebook" width="100%" height="100%" /></noscript></a>
+                                </li>
+                                <li>
+                                    <a href="https://in.linkedin.com/company/brancosoft" class="linkedin"><img
+                                            src="images/icons/linkedin-2024.svg" alt="Linkedin" width="100%"
+                                            height="100%"
+                                            style="-webkit-transform: scale(.9);-ms-transform: scale(.9);transform: scale(.9);"
+                                            data-lazy-src="images/icons/linkedin-2024.svg" data-ll-status="loaded"
+                                            class="entered lazyloaded"><noscript><img
+                                                src="images/icons/linkedin-2024.svg" alt="Linkedin" width="100%"
+                                                height="100%"
+                                                style="-webkit-transform: scale(.9);-ms-transform: scale(.9);transform: scale(.9);" /></noscript></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/brancosoft/" class="insta"><img
+                                            src="images/icons/insta-2024.svg" alt="Instagram" width="100%" height="100%"
+                                            style="-webkit-transform: scale(1.1);-ms-transform: scale(1.1);transform: scale(1.1);"
+                                            data-lazy-src="images/icons/insta-2024.svg" data-ll-status="loaded"
+                                            class="entered lazyloaded"><noscript><img src="images/icons/insta-2024.svg"
+                                                alt="Instagram" width="100%" height="100%"
+                                                style="-webkit-transform: scale(1.1);-ms-transform: scale(1.1);transform: scale(1.1);" /></noscript></a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/brancosoft" class="twitter"><img
+                                            src="images/icons/twitter-2024.svg" alt="Twitter" width="100%" height="100%"
+                                            data-lazy-src="images/icons/twitter-2024.svg" data-ll-status="loaded"
+                                            class="entered lazyloaded"><noscript><img
+                                                src="images/icons/twitter-2024.svg" alt="Twitter" width="100%"
+                                                height="100%" /></noscript></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-row3">
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+
+
+
+                        <div class="col-lg-12">
+
+                            <div class="footer-">
+                                <p>Copyright © 2024 <a href="{{ route('home') }}">Brancosoft.</a> All rights reserved. |
+                                    <a href="{{ route('termsCondition') }}">Term &amp; Privacy</a>
+                                    | <a href="{{ route('refundPolicy') }}">Refund Policy</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
