@@ -11777,14 +11777,14 @@ button.btn.btn-dark.btn-br.bg-btn3.btshad-b2.lnk.home-req-btn {
 .the__solutions__Bg .image1 img:hover {
     z-index: 9999;
     top: -27px;
-    transform: rotate(339deg) scale(1.2);
+    transform: rotate(339deg) scale(1.1);
     left: 39px;
     position: absolute;
 }
 
 .the__solutions__Bg .image2 img:hover {
     right: 705px;
-    transform: rotate(-14deg) scale(1.2);
+    transform: rotate(-14deg) scale(1.1);
     top: -115px;
     position: absolute;
     z-index: 9999;
@@ -11793,7 +11793,7 @@ button.btn.btn-dark.btn-br.bg-btn3.btshad-b2.lnk.home-req-btn {
 .the__solutions__Bg .image3 img:hover {
     right: 50%;
     left: 50%;
-    transform: translate(-50%, -2%) scale(1.2);
+    transform: translate(-50%, -2%) scale(1.1);
     top: -141px;
     z-index: 99;
     position: absolute;
@@ -11803,7 +11803,7 @@ button.btn.btn-dark.btn-br.bg-btn3.btshad-b2.lnk.home-req-btn {
 
 .the__solutions__Bg .image4 img:hover {
     right: 240px;
-    transform: rotate(7deg) scale(1.2);
+    transform: rotate(7deg) scale(1.1);
     top: -130px;
     position: absolute;
     z-index: 9999;
@@ -11812,7 +11812,7 @@ button.btn.btn-dark.btn-br.bg-btn3.btshad-b2.lnk.home-req-btn {
 
 .the__solutions__Bg .image5 img:hover {
     right: 3px;
-    transform: rotate(13deg) scale(1.2);
+    transform: rotate(13deg) scale(1.1);
     top: -76px;
     position: absolute;
     z-index: 9999;
